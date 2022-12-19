@@ -1,0 +1,22 @@
+<html>  
+<head>  
+<title>  
+Fibonacci Series in JavaScript </title>  
+</head>  
+<body>  
+<script type = "text/javascript">  
+function fib() 
+var n1 = 0, n2 = 1, next_num, i;
+            var num =parseInt(prompt("Enter the limit of fibonacci series"));
+            document.write("Fibonacci Series:");
+            for(i=1;i<=num;i++)
+     {document.write("<br>"+ n1); //printthe n1
+     next_num = n1 + n2; //sum of n1 and n2 into the next_num
+     n1=n2;
+     n2=next_num;
+        }
+</script>  
+<input type text="text" id="txtloop" />
+<button onclick="fib()">Enter</button>
+<p id="output"></p>
+</body>  

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+          var height = 8; 
+     var width = 10;
+     var board = "";
+
+     for (var y = 0; y < height; y++) {   
+       for (var x = 0; x < width; x++) {
+         if ((x + y) % 2 == 0){
+           board += " ";
+         }
+         else if(x%(width-1) == 0){
+           board += "\n";
+         }
+         else{
+           board += "#";
+           }
+        }
+     }
+
+     console.log(board);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

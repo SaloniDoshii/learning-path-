@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial series</title>
+</head>
+
+<body style="font-size: 20px;">
+    Enter a number: <input id="number">
+    <br><br>
+    <button onclick="fact()"> Submit </button>
+    <p id="res"></p>
+    <script>
+        function fact() {
+            var i, number, f;
+            f = 1;
+            number = document.getElementById("number").value;
+            for (i = 1; i <= number; i++) {
+                f = f * i;
+            }
+            i = i - 1;
+            document.getElementById("res").innerHTML = "The factorial of the number " + i + " is: " + f;
+        }
+    </script>
+</body>
+
+</html>
