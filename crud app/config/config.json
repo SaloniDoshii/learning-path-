@@ -1,0 +1,9 @@
+{
+    "test": {
+        "username": "salonid",
+        "password": "11A5Z8aDJgJ4wSCSs1Q4MJ1whu",
+        "database": "salonid",
+        "host": "15.206.7.200",
+        "dialect": "mysql"
+    }
+}
