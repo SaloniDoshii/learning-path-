@@ -1,0 +1,9 @@
+/* footer styling */
+.footer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: rgb(2, 2, 2);
+  color: white;
+  text-align: center;
+}
