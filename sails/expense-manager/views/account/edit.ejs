@@ -1,0 +1,24 @@
+<!-- Header -->
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+  <a class="navbar-brand">Expense Manager</a>
+  <a href="/login" class="btn btn-secondary me-4">Logout</a>
+</nav>
+
+<h2 class="text-center mt-5">Edit Account</h2>
+<div class="container">
+  <form method="post" action="/account/update/<%= account.id %>">
+    <div class="form-group mt-5">
+      <input
+        type="text"
+        name="accountname"
+        class="form-control"
+        id="exampleInputPassword1"
+        value="<%= account.accountname %>"
+      />
+    </div>
+    <div class="form-outline mt-3">
+      <input type="submit" value="Update" class="btn btn-success" />
+    </div>
+  </form>
+</div>

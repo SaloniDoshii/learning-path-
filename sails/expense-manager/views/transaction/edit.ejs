@@ -1,0 +1,69 @@
+<!-- Header -->
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+  <a class="navbar-brand">Expense Manager</a>
+  <a href="/login" class="btn btn-secondary me-4">Logout</a>
+</nav>
+
+<h2 class="text-center mt-5">Update Transaction</h2>
+<div class="container">
+  <form action="/transaction/update/<%= transaction.id %>" method="post">
+    <div class="form-outline mt-3">
+      <label for="date" class="col-1 col-form-label">Date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="date"
+        name="date"
+        value="<%= transaction.date %>"
+      />
+    </div>
+
+    <div class="form-group mt-5">
+      <label for="exampleInputselect">Type of transaction</label>
+      <select class="form-control" id="select" name="select">
+        <option><%= transaction.select %></option>
+      </select>
+    </div>
+    <div class="form-group mt-5">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        name="description"
+        rows="3"
+      >
+<%= transaction.description %></textarea
+      >
+    </div>
+
+    <div class="form-group mt-5">
+      <label for="exampleInputPassword1">Amount</label>
+      <input
+        type="number"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="amount"
+        value="<%= transaction.amount %>"
+        placeholder="Amount"
+      />
+    </div>
+    <div class="form-group mt-5">
+      <label for="exampleInputselect">Created by</label>
+      <select class="form-control" id="created" name="created" required>
+        <option><%= owner.firstname %></option>
+      </select>
+    </div>
+
+    <div class="form-outline mt-3">
+      <input type="submit" value="Update" class="btn btn-success" />
+    </div>
+  </form>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    //from ww  w . j  a  va2s. c  o  m
+    var day = new Date().toISOString().split("T")[0];
+    document.getElementsByName("date")[0].setAttribute("max", day);
+  };
+</script>

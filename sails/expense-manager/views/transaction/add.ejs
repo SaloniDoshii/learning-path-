@@ -1,0 +1,66 @@
+<!-- Header -->
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+  <a class="navbar-brand">Expense Manager</a>
+  <a href="" class="btn btn-secondary me-4">Logout</a>
+</nav>
+
+<h2 class="text-center mt-5">Add Transaction</h2>
+<div class="container">
+
+  <form action="/createtrans/<%= accounts.id %>" method="post">
+    <div class="form-outline mt-3">
+      <label for="date" class="col-1 col-form-label">Date</label>
+      <input type="date" class="form-control" id="date" name="date" required />
+    </div>
+
+
+    <div class="form-group mt-5">
+      <label for="exampleInputselect">Type of transaction</label>
+      <select class="form-control" id="select" name="select">
+        <% for (let select of ['income', 'expense']) { %>
+          <option value="<%= select %>" <%= (user.select === select)%>>
+            <%= select %>
+          </option>
+        <% } %>
+      </select>
+
+
+    </div>
+    <div class="form-group mt-5">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" required></textarea>
+    </div>
+
+    <div class="form-group mt-5">
+      <label for="exampleInputPassword1">Amount</label>
+      <input type="number" class="form-control" name="amount" id="amount" placeholder="Amount" min="0" step="any" required>
+    </div>
+    <div class="form-group mt-5">
+      <label for="exampleInputselect">Created by</label>
+    <select class="form-control" id="created" name="created" required>
+      <option>
+        <%= owner.firstname %>
+      </option>
+     
+    </select>
+    </div>
+    
+    <div class="form-outline mt-3">
+      <div class="col-md-6 mb-4">
+        <div class="form-outline">
+          <button type="submit" class="btn btn-dark btn-lg " onclick="balance()"><i class="fa fa-plus"></i> Add</button>
+
+          <div id="div"></div>
+        </div>
+      </div>
+  </form>
+</div>
+</div>
+
+<script type="text/javascript">
+  window.onload = function() { 
+    var day = new Date().toISOString().split('T')[0];
+    document.getElementsByName("date")[0].setAttribute('max', day);
+  }
+</script>
